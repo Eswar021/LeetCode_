@@ -6,7 +6,6 @@
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy=head
-        count=1
         try:
             while dummy!=None:
                 val = dummy.val
