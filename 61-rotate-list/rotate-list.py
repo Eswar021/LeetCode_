@@ -21,16 +21,16 @@ class Solution:
                 temp.next=head
                 head=temp
         
-        else:
+        elif len!=0:
             for i in range(k):
                 curr=head
-                if len!=0:
-                    while curr.next.next:
-                        curr=curr.next
-                    temp=curr.next
-                    curr.next=None
-                    temp.next=head
-                    head=temp
+                # if len!=0:
+                while curr.next.next:
+                    curr=curr.next
+                temp=curr.next
+                curr.next=None
+                temp.next=head
+                head=temp
         return head
         # for i in range(n):
         #     curr=head
