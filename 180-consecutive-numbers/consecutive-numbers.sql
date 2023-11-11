@@ -1,3 +1,5 @@
-select distinct num as ConsecutiveNums from logs
-where 
-(id+1,num) in (select * from logs) and (id+2,num) in (select * from logs)
+with new as (select *, lead(num,1) over() as next1,lead(num,2) over() as next2 from logs)
+
+select distinct num as ConsecutiveNums 
+from new
+where num=next1 and num=next2
